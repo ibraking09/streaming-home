@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" role="img" aria-labelledby="title">
+  <title id="title">Streaming Home mark</title>
+  <rect x=".5" y=".5" width="71" height="71" rx="16" fill="#211c2c" stroke="#493d5d"/>
+  <path d="M28 20h-5a7 7 0 0 0-7 7v18a7 7 0 0 0 7 7h5m16-32h5a7 7 0 0 1 7 7v18a7 7 0 0 1-7 7h-5" fill="none" stroke="#c7b7ff" stroke-width="3" stroke-linecap="round"/>
+  <path d="M29.5 28h16l-5 16h-16z" fill="#f7f5fc"/>
+  <path d="M48.5 28h3l-5 16h-3z" fill="#c7b7ff"/>
+</svg>

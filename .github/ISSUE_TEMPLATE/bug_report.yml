@@ -1,22 +1,50 @@
 name: Bug report
-description: Report a launcher or Fire OS compatibility problem
+description: Report a reproducible problem in the launcher or installer
+title: "[Bug] "
 body:
-  - type: input
-    id: device
+  - type: markdown
     attributes:
-      label: Fire TV model and Fire OS version
-    validations:
-      required: true
+      value: |
+        Check [existing issues](https://github.com/ibraking09/streaming-home/issues) first.
+        Use the device compatibility form to report general results for a different Fire TV model or firmware.
+        Remove account details, serial numbers, and network addresses from screenshots or logs.
+        For a security issue, follow the [security policy](https://github.com/ibraking09/streaming-home/blob/main/SECURITY.md).
   - type: input
     id: version
     attributes:
-      label: Streaming Home version and Home redirect state
+      label: Streaming Home version
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Fire TV model, Fire OS build, and Android API
+      description: Include the model code and firmware build when available.
+      placeholder: Fire TV Stick 4K Plus (AFTMA08C15), Fire OS 8.1.8.5 (RS8185/3898), API 30
+    validations:
+      required: true
+  - type: dropdown
+    id: redirect
+    attributes:
+      label: Optional Home redirection
+      options:
+        - Disabled
+        - Enabled
+        - Unknown or not applicable
     validations:
       required: true
   - type: textarea
-    id: behavior
+    id: steps
     attributes:
-      label: Steps, expected behavior, and observed behavior
-      description: Redact account information, private network addresses, and device identifiers.
+      label: Steps to reproduce
+      description: For installer issues, include your computer OS and installation method.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and observed behavior
+      description: Include whether the issue is repeatable and any relevant redacted logs or screenshots.
     validations:
       required: true

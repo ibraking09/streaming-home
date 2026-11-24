@@ -1,0 +1,49 @@
+name: Device compatibility report
+description: Share a successful or unsuccessful test on a Fire TV model or firmware
+title: "[Compatibility] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Successful and unsuccessful tests are welcome. Start with the [current compatibility notes](https://github.com/ibraking09/streaming-home/blob/main/docs/COMPATIBILITY.md).
+        Test on a device you have permission to use. Share the model code and omit serial numbers, account details, and network addresses.
+  - type: input
+    id: model
+    attributes:
+      label: Fire TV name and model code
+      placeholder: Fire TV Stick 4K Plus (AFTMA08C15)
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Fire OS version and build
+      placeholder: Fire OS 8.1.8.5 (RS8185/3898)
+    validations:
+      required: true
+  - type: input
+    id: api
+    attributes:
+      label: Android version and API level if known
+      placeholder: Android 11 (API 30)
+  - type: input
+    id: version
+    attributes:
+      label: Streaming Home version
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: textarea
+    id: standalone
+    attributes:
+      label: Standalone installation and launch
+      description: How did you install it? Could you open Streaming Home from Amazon’s Apps library and launch an app from All Apps?
+    validations:
+      required: true
+  - type: textarea
+    id: redirect
+    attributes:
+      label: Optional Home redirection
+      description: If tested, describe what happened when you pressed Home, opened the Appstore from Streaming Home, and reopened Streaming Home. Otherwise, enter “Not tested”.
+    validations:
+      required: true

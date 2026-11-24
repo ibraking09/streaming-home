@@ -1,6 +1,12 @@
 # Install Streaming Home
 
-Get the signed APK and `SHA256SUMS` from the [release page](https://github.com/ibraking09/streaming-home/releases/tag/v0.1.0). Review [verified compatibility](COMPATIBILITY.md).
+Get the signed APK and `SHA256SUMS` from **Assets** on the [latest release page](https://github.com/ibraking09/streaming-home/releases/latest). Review [verified compatibility](COMPATIBILITY.md) before installing. The commands below use the v0.1.0 filename as an example. Use the name of the APK you downloaded.
+
+- [Standalone sideload](#a-standalone-sideload)
+- Guided ADB installer for [Linux and macOS](#linux-and-macos) or [Windows PowerShell](#windows-powershell)
+- [Manual ADB](#c-manual-adb)
+- [Optional Home redirection](#optional-home-redirection)
+- [Update, uninstall, and recovery](#update-uninstall-and-recovery)
 
 ## A. Standalone sideload
 
@@ -8,19 +14,27 @@ Compare the APK’s SHA-256 with its entry in `SHA256SUMS`. Use `sha256sum strea
 
 ## B. Guided ADB installer
 
-Install [Android SDK Platform-Tools](https://developer.android.com/tools/releases/platform-tools) and put `adb` on your PATH. Enable ADB debugging on the Fire TV as described below. Download the [Linux/macOS installer](https://github.com/ibraking09/streaming-home/releases/download/v0.1.0/install.sh) or [PowerShell installer](https://github.com/ibraking09/streaming-home/releases/download/v0.1.0/Install-StreamingHome.ps1). Compare the download’s SHA-256 with its entry in `SHA256SUMS`, then run the installer from the download directory.
+Install [Android SDK Platform-Tools](https://developer.android.com/tools/releases/platform-tools) and put `adb` on your PATH. [Enable ADB debugging on the Fire TV](#c-manual-adb). Download the installer for your platform and compare its SHA-256 with the matching entry in the release’s `SHA256SUMS`. Run the installer from the download directory.
+
+### Linux and macOS
+
+Download [install.sh](https://github.com/ibraking09/streaming-home/releases/latest/download/install.sh). To verify it, run `sha256sum install.sh` on Linux or `shasum -a 256 install.sh` on macOS and compare the result with `SHA256SUMS`.
 
 ```sh
 bash ./install.sh
 bash ./install.sh --ip FIRE_TV_IP --apk ./streaming-home-v0.1.0.apk --checksum ./SHA256SUMS --dry-run
 ```
 
+### Windows PowerShell
+
+Download [Install-StreamingHome.ps1](https://github.com/ibraking09/streaming-home/releases/latest/download/Install-StreamingHome.ps1). To verify it, run `Get-FileHash -Algorithm SHA256 .\Install-StreamingHome.ps1` and compare the result with `SHA256SUMS`.
+
 ```powershell
 .\Install-StreamingHome.ps1
 .\Install-StreamingHome.ps1 -IP FIRE_TV_IP -Apk .\streaming-home-v0.1.0.apk -Checksum .\SHA256SUMS -DryRun
 ```
 
-Remove the dry-run option to install. Supply the IP argument and `--no-prompt` or `-NoPrompt` for a noninteractive install. When no local APK is supplied, the script downloads the release and its checksum from GitHub. On the verified firmware it offers redirection separately, with No as the default. Scripts do not alter system packages.
+Omit the dry-run option to install from a local APK. For a noninteractive install, supply the IP argument and `--no-prompt` or `-NoPrompt`. When no local APK is supplied, the installer downloads the APK and checksum for its matching release. On the verified firmware it offers redirection separately, with No as the default. Scripts do not alter system packages.
 
 ## C. Manual ADB
 
