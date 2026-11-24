@@ -1,0 +1,22 @@
+name: Bug report
+description: Report a launcher or Fire OS compatibility problem
+body:
+  - type: input
+    id: device
+    attributes:
+      label: Fire TV model and Fire OS version
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Streaming Home version and Home redirect state
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Steps, expected behavior, and observed behavior
+      description: Redact account information, private network addresses, and device identifiers.
+    validations:
+      required: true

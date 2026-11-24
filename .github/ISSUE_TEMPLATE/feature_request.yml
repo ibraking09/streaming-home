@@ -1,0 +1,9 @@
+name: Feature request
+description: Describe a launcher improvement
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: Use case and proposed behavior
+    validations:
+      required: true
